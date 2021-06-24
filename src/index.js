@@ -14,9 +14,15 @@ server.listen(serverPort, () => {
 });
 
 server.get("/users", (req, res) => {
+  const filterByGender = req.query.gender;
+  const filteredmovies = movies.filter((movie) => {
+    return filterByGender === ""
+      ? movie
+      : movie.gender.includes(filterByGender);
+  });
   const response = {
     success: true,
-    movies,
+    movies: filteredmovies,
   };
   res.json(response);
 });
