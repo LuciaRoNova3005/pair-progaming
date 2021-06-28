@@ -4,7 +4,7 @@ const getMoviesFromApi = (params) => {
   console.log(params);
 
   // Añadimos en el fecth los query params a la url//
-  const queryParams = `?gender=${params.gender}`;
+  const queryParams = `?gender=${params.gender}&sort=${params.sort}`;
   console.log(queryParams);
   console.log("Se están pidiendo las películas de la app");
 
